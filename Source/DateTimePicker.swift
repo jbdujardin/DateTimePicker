@@ -182,7 +182,8 @@ public protocol DateTimePickerDelegate: class {
     
     private var shadowView: UIView!
     private var contentView: UIView!
-    private var dateTitleLabel: UILabel!
+    public var dateTitleLabel: UILabel!
+    public var title: String?
     private var todayButton: UIButton!
     private var doneButton: UIButton!
     private var cancelButton: UIButton!
@@ -602,11 +603,11 @@ public protocol DateTimePickerDelegate: class {
     }
     
     private func resetDateTitle() {
-        guard dateTitleLabel != nil else {
+        guard dateTitleLabel != nil && title != nil else {
             return
         }
     
-        dateTitleLabel.text = selectedDateString
+        dateTitleLabel.text = title
     }
     
     func fillDates(fromDate: Date, toDate: Date) {
