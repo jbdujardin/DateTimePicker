@@ -197,8 +197,8 @@ public protocol DateTimePickerDelegate: class {
     
     private var modalCloseHandler: (() -> Void)?
     
-    internal var minimumDate: Date!
-    internal var maximumDate: Date!
+    public var minimumDate: Date!
+    public var maximumDate: Date!
     
     internal var calendar: Calendar = .current
     internal var dates: [Date]! = []
