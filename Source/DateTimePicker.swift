@@ -622,7 +622,7 @@ public protocol DateTimePickerDelegate: class {
             guard let date = calendar.date(byAdding: days, to: fromDate) else {
                 break;
             }
-            if date.compare(toDate) == .orderedDescending {
+            if calendar.component(.day, from: date) > calendar.component(.day, from: toDate) {
                 break
             }
             dates.append(date)
